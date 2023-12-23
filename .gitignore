@@ -1,4 +1,3 @@
 **/.DS_Store
-db_entrypoint/*
-my_sql_data/*
-.docker
+/db_entrypoint/*
+/my_sql_data/*

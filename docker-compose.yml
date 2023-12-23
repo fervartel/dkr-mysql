@@ -4,14 +4,18 @@ services:
   db:
     container_name: my_mysql
     image: mysql:8-debian
-    command: --default-authentication-plugin=mysql_native_password --sql_mode=
+    command: mysqld --default-authentication-plugin=mysql_native_password --sql_mode=""
     environment:
-      MYSQL_ROOT_PASSWORD: Master-123
-      MYSQL_DATABASE: Test
+      MYSQL_ROOT_PASSWORD: Password
+      MYSQL_DATABASE: MyDB
     ports:
       - "3306:3306"
     volumes:
-      - ./my_sql_data:/var/lib/mysql
-      - ./db_entrypoint:/docker-entrypoint-initdb.d
+#      - ./my_sql_data:/var/lib/mysql                   #Bind Mount
+      - mysql_data:/var/lib/mysql                       #Named Volume
+      - ./db_entrypoint:/docker-entrypoint-initdb.d     #.sql dump in local db_entrypoint directory will be imported in the DB if no existing data in mysql_data volume 
     restart:
       unless-stopped
+
+volumes:
+  mysql_data:
