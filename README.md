@@ -8,7 +8,7 @@ docker-compose up -d
 - This will create a mysql instance with a DB named MyDB.
 - MyDB root password is 'Password' by default.
 - mysql_data persistent named volume will be created.
-- .sql dump in local db_entrypoint directory will be imported in the DB if no existing data in mysql_data volume.
+- .sql dump in a local 'db_entrypoint' directory will be imported in the DB if no existing data in mysql_data volume.
 
 ## To stop and eliminate the container:
 ```
