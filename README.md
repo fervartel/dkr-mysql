@@ -23,4 +23,10 @@ docker volumes ls
 - Delete the corresponding volume using:
 ```
 docker volumes rm <volume_namev>
+e.g. docker volumes rm dkr-mysql_mysql_data
+```
+- You can inspect your volume further by using:
+```
+docker inspect <volume_namev>
+e.g. : docker inspect dkr-mysql_mysql_data
 ```
