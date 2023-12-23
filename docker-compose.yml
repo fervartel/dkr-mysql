@@ -11,9 +11,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-#      - ./my_sql_data:/var/lib/mysql                   #Bind Mount
-      - mysql_data:/var/lib/mysql                       #Named Volume
-      - ./db_entrypoint:/docker-entrypoint-initdb.d     #.sql dump in local db_entrypoint directory will be imported in the DB if no existing data in mysql_data volume 
+#      - ./my_sql_data:/var/lib/mysql                   # Bind Mount (This should be avoided unless in dev environments, in favor of Named Volumes instead)
+      - mysql_data:/var/lib/mysql                       # Named Volume
+      - ./db_entrypoint:/docker-entrypoint-initdb.d     # .sql dump in local db_entrypoint directory will be imported in the DB if no existing data in mysql_data volume 
     restart:
       unless-stopped
 
