@@ -1,3 +1,5 @@
+<!-- To preview README.md in VS code use cmd + K V -->
+
 # MySQL container
 ## To build a container based on the docker-compose.yml file included in this project: 
 ```
@@ -20,5 +22,5 @@ docker volumes ls
 ```
 - Delete the corresponding volume using:
 ```
-docker volumes rm <volume_name>
+docker volumes rm <volume_namev>
 ```
